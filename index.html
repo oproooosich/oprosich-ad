@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реклама в ОПРОСЫЧ | NPPLUS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #cba03b;
+            --primary-dark: #eaad20;
+            --primary-light: #e8c46c;
+            --text-color: #dedede;
+            --secondary-test-color: #1c1c1c;
+            --light-text: #f8f8f8;
+            --bg-color: #0a0a12;
+            --card-bg: #14141f;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(203, 160, 59, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+        }
+
+        
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--light-text);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(203, 160, 59, 0.3);
+            font-size: 0.9rem;
+        }
+
+        .section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .benefit-card {
+            background-color: rgba(20, 20, 31, 0.8);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 12px 8px;
+            text-align: left;
+            border-bottom: 1px solid rgba(203, 160, 59, 0.3);
+        }
+
+        .pricing-table th {
+            background-color: rgba(203, 160, 59, 0.1);
+            color: var(--primary-light);
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .channels-list {
+            list-style-type: none;
+        }
+
+        .channels-list li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        .channels-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+        }
+
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .testimonial {
+            background-color: rgba(20, 20, 31, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-author img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .steps {
+            counter-reset: step-counter;
+            margin: 20px 0;
+        }
+
+        .step {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+
+        .step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* Cosmic Header */
+        header {
+            background-color: var(--header-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo-highlight {
+            color: var(--neon-blue);
+            font-weight: 800;
+        }
+
+        .logo-badge {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: super;
+            line-height: 1;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle,
+        .lang-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background-color: var(--secondary-bg);
+            transition: all 0.3s;
+            background: var(--lang-color);
+            border: 1px solid var(--border-color);
+            background-color: var(--secondary-bg);
+        }
+
+        .theme-toggle:hover,
+        .lang-toggle:hover {
+            background-color: var(--lang-color-hover);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 12px;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::before {
+            width: calc(100% - 24px);
+        }
+
+        /* Mobile optimizations */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .testimonial {
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .testimonial {
+                flex: 1 1 calc(33.333% - 15px);
+            }
+
+            .pricing-table {
+                font-size: 1rem;
+            }
+
+            .pricing-table th {
+                font-size: 1rem;
+            }
+        }
+
+        /* Animation for buttons */
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(203, 160, 59, 0.4);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(203, 160, 59, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="/public/tg-add/logo.png"
+                        style="max-height: 50px; background: var(--accent-gradient); padding: 2px; border-radius: 12%;">
+                </div>
+                <h3 style="margin-bottom: 0; color: #fff;">ОПРОСЫЧ</h3>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>РЕКЛАМА В ОПРОСЫЧ</h1>
+            <p>Эффективное продвижение вашего проекта среди активной аудитории Telegram</p>
+            
+            <a href="https://t.me/golosui_oprosich_bot?start=advert" class="cta-button">
+                <i class="fab fa-telegram"></i> ЗАКАЗАТЬ РЕКЛАМУ
+            </a>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="section">
+            <h2>ПОЧЕМУ РЕКЛАМА У НАС?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Хорошая аудитория</h3>
+                    <p>Охват более 500 активных пользователей Telegram</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Таргетирование</h3>
+                    <p>Точный таргетинг по интересам и активности</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <h3>Хорошая конверсия</h3>
+                    <p>CTR рекламных постов 3-4%</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                    <h3>Премиум-размещение</h3>
+                    <p>Максимальное внимание к вашей рекламе</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ТАРИФЫ НА РЕКЛАМУ</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Тип рекламы</th>
+                        <th>Охват</th>
+                        <th>Стоимость</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Пост в канале</td>
+                        <td>500+</td>
+                        <td>1,5 $</td>
+                    </tr>
+                    <tr>
+                        <td>Реклама в боте</td>
+                        <td>100 DAU</td>
+                        <td>1,5 $</td>
+                    </tr>
+                    <tr>
+                        <td>Комплексный пакет</td>
+                        <td>Канал + бот</td>
+                        <td>2,2 $</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="highlight">Уточняйте детали у @Ex1dy!</p>
+        </div>
+
+        <div class="section">
+            <h2>ГДЕ БУДЕТ РАЗМЕЩЕНА ВАША РЕКЛАМА?</h2>
+            <ul class="channels-list">
+                <li>Основной канал "ОПРОСЫЧ" (500+)</li>
+                <li>Бот @golosui_oprosich_bot (100 DAU)</li>
+                <li>Рекламные рассылки</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>КАК ЗАКАЗАТЬ РЕКЛАМУ?</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>Оставьте заявку</h3>
+                    <p>Напишите нашему менеджеру в Telegram</p>
+                </div>
+                <div class="step">
+                    <h3>Обсуждение деталей</h3>
+                    <p>Согласуем текст и оформление поста</p>
+                </div>
+                <div class="step">
+                    <h3>Оплата</h3>
+                    <p>Производите оплату удобным способом</p>
+                </div>
+                <div class="step">
+                    <h3>Размещение</h3>
+                    <p>Публикуем рекламу и предоставляем отчет</p>
+                </div>
+            </div>
+            <a href="https://t.me/golosui_oprosich_bot?start=advert" class="cta-button">
+                <i class="fab fa-telegram"></i> НАПИСАТЬ НАМ
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>ЧАСТЫЕ ВОПРОСЫ</h2>
+            <div class="benefit-card" style="margin-bottom: 15px;">
+                <h3>Какие форматы рекламы?</h3>
+                <p>Текстовые посты, медиа (фото/видео), нативные интеграции</p>
+            </div>
+            <div class="benefit-card" style="margin-bottom: 15px;">
+                <h3>Можно ли изменить пост?</h3>
+                <p>Да, в течение 2 часов после публикации</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Есть ли скидки?</h3>
+                <p>Да, до 30% при заказе на неделю</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero" style="padding: 40px 0; margin-top: 20px;">
+        <div class="container">
+            <h2>ГОТОВЫ НАЧАТЬ?</h2>
+            <p>Свяжитесь с нами для бесплатной консультации</p>
+            <a href="https://t.me/golosui_oprosich_bot?start=advert" class="cta-button">
+                <i class="fab fa-telegram"></i> ЗАКАЗАТЬ РЕКЛАМУ
+            </a>
+        </div>
+    </section>
+</body>
+
+</html>
